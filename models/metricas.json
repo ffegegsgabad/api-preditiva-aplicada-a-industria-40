@@ -1,0 +1,29 @@
+{
+  "modelo_selecionado": "Random Forest (max_depth=6)",
+  "framework": "scikit-learn / imbalanced-learn",
+  "split": "Treino 60% / Validação 20% / Teste 20% (Estratificado)",
+  "metricas_validacao": {
+    "acuracia": 0.919,
+    "recall": 0.7941,
+    "precisao": 0.2673,
+    "f1_score": 0.4,
+    "roc_auc": 0.9561
+  },
+  "metricas_teste": {
+    "acuracia": 0.9385,
+    "recall": 0.7647,
+    "precisao": 0.327,
+    "f1_score": 0.4581,
+    "roc_auc": 0.9338
+  },
+  "matriz_confusao_teste": [
+    [
+      1825,
+      107
+    ],
+    [
+      16,
+      52
+    ]
+  ]
+}
