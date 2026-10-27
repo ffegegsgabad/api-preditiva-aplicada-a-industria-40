@@ -32,39 +32,41 @@ class PredictInput(BaseModel):
         description="Variante de qualidade do produto: 'L' (Low - 60%), 'M' (Medium - 30%) ou 'H' (High - 10%)",
         examples=["M"],
     )
+    # Limites = faixa vista no treino (min/max do dataset) com folga.
+    # O modelo interpola bem dentro do que já viu, mas não extrapola com segurança.
     temperatura_ar_k: float = Field(
         ...,
-        ge=250.0,
-        le=350.0,
-        description="Temperatura do ar ambiente em Kelvin [faixa física aceitável: 250.0 a 350.0 K]",
+        ge=290.0,
+        le=310.0,
+        description="Temperatura do ar ambiente em Kelvin [aceito: 290.0 a 310.0 K; no treino: 295.3 a 304.5 K]",
         examples=[298.1],
     )
     temperatura_processo_k: float = Field(
         ...,
-        ge=250.0,
-        le=350.0,
-        description="Temperatura de operação do processo em Kelvin [faixa física aceitável: 250.0 a 350.0 K]",
+        ge=300.0,
+        le=320.0,
+        description="Temperatura de operação do processo em Kelvin [aceito: 300.0 a 320.0 K; no treino: 305.7 a 313.8 K]",
         examples=[308.6],
     )
     velocidade_rotacao_rpm: float = Field(
         ...,
-        gt=0.0,
-        le=5000.0,
-        description="Velocidade de rotação do fuso em RPM [faixa física aceitável: > 0 a 5000.0 RPM]",
+        ge=1000.0,
+        le=3000.0,
+        description="Velocidade de rotação do fuso em RPM [aceito: 1000 a 3000 RPM; no treino: 1168 a 2886 RPM]",
         examples=[1551.0],
     )
     torque_nm: float = Field(
         ...,
         gt=0.0,
-        le=200.0,
-        description="Torque aplicado pelo motor em Newton-metro [faixa física aceitável: > 0 a 200.0 Nm]",
+        le=100.0,
+        description="Torque aplicado pelo motor em Newton-metro [aceito: maior que 0 até 100 Nm; no treino: 3.8 a 76.6 Nm]",
         examples=[42.8],
     )
     desgaste_ferramenta_min: int = Field(
         ...,
         ge=0,
-        le=500,
-        description="Tempo de desgaste acumulado da ferramenta de corte em minutos [faixa física aceitável: 0 a 500 min]",
+        le=300,
+        description="Tempo de desgaste acumulado da ferramenta de corte em minutos [aceito: 0 a 300 min; no treino: 0 a 253 min]",
         examples=[0],
     )
 
