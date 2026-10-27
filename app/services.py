@@ -4,7 +4,7 @@ import pandas as pd
 from app.schemas import PredictInput, PredictOutput
 
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "modelo_falha.joblib")
-MODEL_VERSION = "1.0.0"
+MODEL_VERSION = "1.1.0"  # 1.1.0 = Árvore de Decisão (max_depth=5)
 
 
 class RegraNegocioException(Exception):
