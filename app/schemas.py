@@ -8,8 +8,13 @@ class PredictInput(BaseModel):
     
     Recebe os sinais dos sensores da máquina industrial com validações estritas
     de limites físicos operacionais, descrições detalhadas e exemplos representativos.
+
+    - strict=True: texto em campo numérico é recusado (inclusive "42.8" entre aspas).
+    - extra="forbid": campos que o modelo não conhece são recusados com 422.
     """
     model_config = ConfigDict(
+        strict=True,
+        extra="forbid",
         json_schema_extra={
             "example": {
                 "tipo": "M",
