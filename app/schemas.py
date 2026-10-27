@@ -97,7 +97,7 @@ class PredictOutput(BaseModel):
     versao_modelo: str = Field(
         ...,
         description="Identificador da versão do modelo em produção",
-        examples=["1.0.0"],
+        examples=["1.1.0"],
     )
 
 
@@ -118,5 +118,5 @@ class HealthOutput(BaseModel):
     versao_api: str = Field(
         ...,
         description="Versão da API",
-        examples=["1.0.0"],
+        examples=["1.1.0"],
     )

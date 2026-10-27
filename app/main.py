@@ -36,7 +36,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="API de Manutenção Preditiva — Indústria 4.0",
     description="API REST de alta performance para inferência em tempo real de falhas mecânicas.",
-    version="1.0.0",
+    version="1.1.0",
     lifespan=lifespan,
 )
 
