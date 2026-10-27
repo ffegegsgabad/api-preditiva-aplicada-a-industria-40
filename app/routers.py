@@ -29,9 +29,9 @@ async def health_check(request: Request):
     modelo_carregado = modelo is not None
 
     return HealthOutput(
-        status="operacional",
+        status="operacional" if modelo_carregado else "degradado",
         modelo_carregado=modelo_carregado,
-        versao_api="1.0.0",
+        versao_api=request.app.version,
     )
 
 

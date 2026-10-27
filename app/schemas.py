@@ -105,9 +105,9 @@ class HealthOutput(BaseModel):
     """
     Esquema de saída do monitoramento de integridade operacional (Health Check).
     """
-    status: str = Field(
+    status: Literal["operacional", "degradado"] = Field(
         ...,
-        description="Status operacional da aplicação",
+        description="'operacional' com o modelo em memória; 'degradado' se a API subiu sem o modelo",
         examples=["operacional"],
     )
     modelo_carregado: bool = Field(
