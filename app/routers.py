@@ -1,3 +1,4 @@
+import logging
 from fastapi import APIRouter, Request, HTTPException, status
 from app.schemas import PredictInput, PredictOutput, HealthOutput
 from app.services import (
@@ -6,6 +7,7 @@ from app.services import (
     ModeloNaoCarregadoException,
 )
 
+logger = logging.getLogger("manutencao_preditiva")
 router = APIRouter()
 
 
@@ -27,9 +29,9 @@ async def health_check(request: Request):
     modelo_carregado = modelo is not None
 
     return HealthOutput(
-        status="operacional",
+        status="operacional" if modelo_carregado else "degradado",
         modelo_carregado=modelo_carregado,
-        versao_api="1.0.0",
+        versao_api=request.app.version,
     )
 
 
@@ -40,13 +42,17 @@ async def health_check(request: Request):
     summary="Predição de risco de falha mecânica",
     tags=["Inferência Preditiva"],
 )
-async def predict(dados: PredictInput, request: Request):
+def predict(dados: PredictInput, request: Request):
     """
     Endpoint de inferência para manutenção preditiva (Fase 5).
-    
+
     Consome o payload de sinais telemétricos validado pelo Pydantic (Fase 4),
     acessa o modelo em RAM (Fase 3) e delega a inferência à camada de serviços (Fase 2).
-    
+
+    A rota é `def` (e não `async def`) porque a predição do scikit-learn é cálculo
+    de CPU: o FastAPI roda rotas `def` num pool de threads, sem travar o servidor
+    para as outras requisições.
+
     * **200 OK:** Predição calculada com sucesso, retornando diagnóstico e probabilidade.
     * **400 Bad Request:** Violação de restrição física do processo industrial.
     * **422 Unprocessable Entity:** Validação de esquema do Pydantic (tipos incorretos ou fora das faixas).
@@ -68,8 +74,10 @@ async def predict(dados: PredictInput, request: Request):
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail=str(exc),
         )
-    except Exception as exc:
+    except Exception:
+        # O detalhe técnico vai para o log do servidor, não para o cliente
+        logger.exception("Erro inesperado durante a inferência preditiva")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro interno durante a inferência preditiva: {str(exc)}",
+            detail="Erro interno durante a inferência preditiva. Tente novamente mais tarde.",
         )
