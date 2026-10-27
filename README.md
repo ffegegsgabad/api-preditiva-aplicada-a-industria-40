@@ -3,7 +3,7 @@
 > **SCTEC — Desenvolvimento de IA para Análise Preditiva [T1 e T2]**  
 > **Projeto Avaliativo Final do Módulo 2 (Semana 13)**  
 > **Aluno:** Rian Gomes  
-> **Repositório GitHub:** [[Link do Repositório GitHub]](https://github.com/[seu-usuario]/manutencao-preditiva-api)  
+> **Repositório GitHub:** [github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40](https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40)  
 > **Vídeo de Demonstração (Google Drive):** [[Link do Vídeo no Google Drive]](https://drive.google.com/file/d/SEU_ID_DO_VIDEO/view?usp=sharing)  
 
 ---
@@ -65,8 +65,8 @@ O ecossistema do projeto foi construído sobre Python 3.14 com versões fixadas 
 
 1. **Clonar o Repositório:**
    ```bash
-   git clone https://github.com/[seu-usuario]/manutencao-preditiva-api.git
-   cd manutencao-preditiva-api
+   git clone https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40.git
+   cd api-preditiva-aplicada-a-industria-40
    ```
 
 2. **Criar e Ativar o Ambiente Virtual:**
@@ -108,7 +108,7 @@ O ecossistema do projeto foi construído sobre Python 3.14 com versões fixadas 
 O projeto obedece à separação de responsabilidades em camadas desacopladas:
 
 ```
-manutencao-preditiva-api/
+api-preditiva-aplicada-a-industria-40/
 ├── app/
 │   ├── __init__.py           # Inicializador do pacote
 │   ├── main.py               # Instanciação FastAPI, Lifespan e registro de routers
@@ -381,7 +381,7 @@ O projeto segue o fluxo `feature → develop → main`. Nenhuma branch foi exclu
 
 ## 9. Evidências e Gravação do Vídeo
 
-* **Link do Repositório GitHub:** `https://github.com/[seu-usuario]/manutencao-preditiva-api`
+* **Link do Repositório GitHub:** [https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40](https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40)
 * **Link da Apresentação em Vídeo:** `https://drive.google.com/file/d/SEU_ID_DO_VIDEO/view?usp=sharing` *(Configurado em modo leitor para qualquer pessoa com o link)*
 
 ### Roteiro Seguido no Vídeo (Duração ≤ 10 minutos):
