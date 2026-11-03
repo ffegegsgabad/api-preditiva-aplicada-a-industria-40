@@ -4,7 +4,7 @@
 > **Projeto Avaliativo Final do Módulo 2 (Semana 13)**  
 > **Aluno:** Rian Gomes  
 > **Repositório GitHub:** [github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40](https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40)  
-> **Vídeo de Demonstração (Google Drive):** [[Link do Vídeo no Google Drive]](https://drive.google.com/file/d/SEU_ID_DO_VIDEO/view?usp=sharing)  
+> **Vídeo de Demonstração (Google Drive):** [Pasta do vídeo no Google Drive](https://drive.google.com/drive/folders/1jK5obzM54grGZNGyxv1Ek104giNChsFZ?usp=sharing)  
 
 ---
 
@@ -382,7 +382,7 @@ O projeto segue o fluxo `feature → develop → main`. Nenhuma branch foi exclu
 ## 9. Evidências e Gravação do Vídeo
 
 * **Link do Repositório GitHub:** [https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40](https://github.com/ffegegsgabad/api-preditiva-aplicada-a-industria-40)
-* **Link da Apresentação em Vídeo:** `https://drive.google.com/file/d/SEU_ID_DO_VIDEO/view?usp=sharing` *(Configurado em modo leitor para qualquer pessoa com o link)*
+* **Link da Apresentação em Vídeo (pasta no Google Drive):** [https://drive.google.com/drive/folders/1jK5obzM54grGZNGyxv1Ek104giNChsFZ](https://drive.google.com/drive/folders/1jK5obzM54grGZNGyxv1Ek104giNChsFZ?usp=sharing) *(acesso de leitor para qualquer pessoa com o link)*
 
 ### Roteiro Seguido no Vídeo (Duração ≤ 10 minutos):
 1. **[0:00–0:40] Objetivo do Sistema:** Problema de paradas não programadas e o que a API entrega.
