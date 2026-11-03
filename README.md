@@ -385,15 +385,14 @@ O projeto segue o fluxo `feature → develop → main`. Nenhuma branch foi exclu
 * **Link da Apresentação em Vídeo (pasta no Google Drive):** [https://drive.google.com/drive/folders/1jK5obzM54grGZNGyxv1Ek104giNChsFZ](https://drive.google.com/drive/folders/1jK5obzM54grGZNGyxv1Ek104giNChsFZ?usp=sharing) *(acesso de leitor para qualquer pessoa com o link)*
 
 ### Roteiro Seguido no Vídeo (Duração ≤ 10 minutos):
-1. **[0:00–0:40] Objetivo do Sistema:** Problema de paradas não programadas e o que a API entrega.
-2. **[0:40–1:30] Origem do Modelo e Dados:** Projeto Final do Módulo 1 e o que os dados exigiram.
-3. **[1:30–4:00] Demonstração no `/docs`:** `/health`, predição normal e de risco, erros 422 e 400 e o log do modelo carregado uma única vez no startup.
-4. **[4:00–4:45] Instruções de Execução:** `venv`, `requirements.txt` e comando `uvicorn`.
-5. **[4:45–5:45] Organização Prévia:** Plano de ação, cronograma e quadro de tarefas antes do código.
-6. **[5:45–6:45] Branches no GitHub:** Fluxo `feature → develop → main` e objetivo de cada branch.
-7. **[6:45–8:45] Argumentação Técnica:** Pipeline unificado, SMOTE só no treino, validação cruzada, escolha da Árvore pelo recall, Lifespan e validação estrita.
-8. **[8:45–9:30] Oportunidades de Melhoria:** Ajuste do limiar de decisão, testes automatizados, Docker e registro de experimentos com MLflow.
-9. **[9:30–9:45] Encerramento.**
+1. **[0:00–0:25] Apresentação:** Quem sou eu e o que vou mostrar.
+2. **[0:25–1:35] O Projeto:** Problema de paradas não programadas, a solução em API e a origem do modelo e dos dados.
+3. **[1:35–2:50] Organização das Tarefas (Notion):** Mapeamento do processo em 10 etapas e Kanban com as tarefas, branches e critérios.
+4. **[2:50–6:15] Projeto no VS Code:** Estrutura em camadas, notebook de treinamento (leakage, split, pipeline com SMOTE, validação cruzada, escolha da Árvore, teste e serialização) e código da API (`schemas`, `services`, `routers`, `main`).
+5. **[6:15–8:05] Demonstração no `/docs`:** Log do lifespan, `/health`, predição normal e de risco, erros 422 e 400.
+6. **[8:05–8:30] Instruções de Execução:** `venv`, `requirements.txt` e comando `uvicorn`.
+7. **[8:30–9:00] Branches:** Fluxo `feature → develop → main` e objetivo de cada branch.
+8. **[9:00–9:45] Melhorias e Encerramento:** Ajuste do limiar de decisão, testes automatizados, Docker e registro de experimentos com MLflow.
 
 ### Próximos Passos (Oportunidades de Melhoria)
 * **Limiar de decisão:** testar o Random Forest com limiar escolhido na validação (ex.: 0,35), que aumenta o recall mantendo o ROC-AUC mais alto.
